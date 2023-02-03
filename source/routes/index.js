@@ -11,4 +11,5 @@ const indexRoutes = (app) => {
     );
 };
 
+
 export default indexRoutes;
