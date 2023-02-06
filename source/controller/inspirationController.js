@@ -2,7 +2,7 @@ import inspirations from "../model/inspirationModel.js";
 
 class InspirationController {
     static listInspiration = (req, res) => {
-        inspirations.find((err, inspiration) => {
+        inspirations.find().populate('tec').exec((err, inspiration) => {
             if (err) {
                 res.status(500).send({ message: err.message })
             } else {
@@ -12,7 +12,7 @@ class InspirationController {
     };
     static seeWithId = (req, res) => {
         const id = req.params.id;
-        inspirations.findById(id, (err, inspiration) => {
+        inspirations.findById(id).populate('tec').exec((err, inspiration) => {
             if (err) {
                 res.status(400).send({ message: err.message });
             } else {
