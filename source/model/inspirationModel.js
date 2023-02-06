@@ -9,7 +9,7 @@ const IspirationSchema = new mongoose.Schema(
         'writer': { type: String, required: true },
         'image': { type: String, required: true },
         'image2': { type: String },
-        'link': { type, String },
+        'link': { type: String },
         'video': { type: String }
     }
 );
